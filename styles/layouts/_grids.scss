@@ -26,9 +26,9 @@
 * MAX-container-size               1140px
 */
 
-$gutteer: 20px;
+$gutter: 20px;
 
-$sm-colums: 4;
+$sm-columns: 4;
 $sm-margin: 5px;
 
 .container {
@@ -49,6 +49,9 @@ $sm-margin: 5px;
   }
 
   @for $i from 1 through $sm-columns {
-    @debug $i;
+    .col-sm-#{$i} {
+      // #{} 변수가 갖고있는 값으로 출력
+      width: percentage($i / $sm-columns); // percentage 내장함수
+    }
   }
 }
